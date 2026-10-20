@@ -1,0 +1,129 @@
+/* 1. RESET E COMPORTAMENTO DA TELA COM A IMAGEM DE FUNDO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  
+  background-image: url('amigos.jpeg'); 
+  background-size: cover;       /* Faz a imagem cobrir a tela toda sem distorcer */
+  background-position: center;  /* Centraliza o foco do Gojo e Geto na tela */
+  background-repeat: no-repeat; /* Evita que a imagem fique se repetindo */
+}
+
+/* Camada escura para o fundo vermelho não me segar */
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Escurece 40% da imagem. */
+  z-index: -1; 
+}
+
+.Seu-Email {
+  background-color: #0000004d;
+  padding: 40px;
+  border-radius: 12px; 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+  z-index: 1; 
+  width: 100%;
+  max-width: 380px; 
+}
+
+.form {
+  --bg-black:#000000;
+  --bg-light: #d8d8d8;
+  --bg-dark: #c70303;
+  --clr: #3f86e2;
+  --clr-alpha: #9c9c9c40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.form .Seus-Dados {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form input[type="email"],
+.form input[type="password"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+  font-size: 1rem;
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+  outline: 2px solid var(--clr);
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--clr);
+  font-weight: 600;
+}
+
+.form .submit {
+  padding: 1rem 0.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  border-radius: 3rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.form .submit:hover {
+  background-color: var(--clr);
+  color: var(--bg-black);
+  transition:1s
+}
+
+.span {
+  text-decoration: none;
+  color: var(--bg-dark);
+  font-size: 0.9rem; 
+  text-align: center;
+}
+
+.span a {
+  color: var(--clr);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.span a:hover {
+  text-decoration: underline;
+}
